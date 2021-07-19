@@ -1,10 +1,10 @@
-package com.ccakir.apps.bitkisagligi;
+package com.ccakir.apps.planthealth;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class BitkiSagligiWebUygulamasiApplicationTests {
+class PlantHealthApplicationTests {
 
 	@Test
 	void contextLoads() {
