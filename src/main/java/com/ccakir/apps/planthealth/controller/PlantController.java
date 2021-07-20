@@ -1,8 +1,8 @@
 package com.ccakir.apps.planthealth.controller;
 
 import com.ccakir.apps.planthealth.service.PlantService;
-import model.dto.DiseaseDTO;
-import model.dto.PlantDTO;
+import com.ccakir.apps.planthealth.model.dto.DiseaseDTO;
+import com.ccakir.apps.planthealth.model.dto.PlantDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

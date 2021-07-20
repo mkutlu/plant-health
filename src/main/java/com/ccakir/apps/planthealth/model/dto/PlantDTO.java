@@ -1,4 +1,4 @@
-package model.dto;
+package com.ccakir.apps.planthealth.model.dto;
 
 import lombok.Data;
 

@@ -1,8 +1,8 @@
 package com.ccakir.apps.planthealth.mapper;
 
-import model.Classification;
-import model.Disease;
-import model.dto.DiseaseDTO;
+import com.ccakir.apps.planthealth.model.Classification;
+import com.ccakir.apps.planthealth.model.Disease;
+import com.ccakir.apps.planthealth.model.dto.DiseaseDTO;
 
 public class DiseaseDTOMapper {
 
@@ -24,7 +24,6 @@ public class DiseaseDTOMapper {
         dto.setCharacteristics(disease.getCharacteristics());
         dto.setChemicalControl(disease.getChemicalControl());
         dto.setCulturalControl(disease.getCulturalControl());
-        dto.setPlants(disease.getPlants());
 
         dto.setClassificationName(disease.getClassification().getBinomialName());
         dto.setClassOf(disease.getClassification().getClassOf());
@@ -48,7 +47,6 @@ public class DiseaseDTOMapper {
         disease.setCharacteristics(dto.getCharacteristics());
         disease.setChemicalControl(dto.getChemicalControl());
         disease.setCulturalControl(dto.getCulturalControl());
-        disease.setPlants(dto.getPlants());
 
         Classification classification = new Classification();
         classification.setBinomialName(dto.getClassificationName());

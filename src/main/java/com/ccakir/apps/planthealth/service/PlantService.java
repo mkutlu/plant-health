@@ -4,10 +4,10 @@ import com.ccakir.apps.planthealth.mapper.DiseaseDTOMapper;
 import com.ccakir.apps.planthealth.mapper.PlantDTOMapper;
 import com.ccakir.apps.planthealth.repository.DiseaseRepository;
 import com.ccakir.apps.planthealth.repository.PlantRepository;
-import model.Disease;
-import model.Plant;
-import model.dto.DiseaseDTO;
-import model.dto.PlantDTO;
+import com.ccakir.apps.planthealth.model.Disease;
+import com.ccakir.apps.planthealth.model.Plant;
+import com.ccakir.apps.planthealth.model.dto.DiseaseDTO;
+import com.ccakir.apps.planthealth.model.dto.PlantDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

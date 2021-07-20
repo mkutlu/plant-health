@@ -1,7 +1,7 @@
 package com.ccakir.apps.planthealth.mapper;
 
-import model.Plant;
-import model.dto.PlantDTO;
+import com.ccakir.apps.planthealth.model.Plant;
+import com.ccakir.apps.planthealth.model.dto.PlantDTO;
 
 import java.util.stream.Collectors;
 

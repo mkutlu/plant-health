@@ -1,12 +1,14 @@
-package model;
+package com.ccakir.apps.planthealth.model;
 
 import lombok.Data;
 import org.hibernate.annotations.Type;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -23,7 +25,8 @@ public class Disease {
     @Type(type="org.hibernate.type.UUIDCharType")
     private UUID id;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "classification_id", referencedColumnName = "id")
     private Classification classification;
 
     @ManyToMany
