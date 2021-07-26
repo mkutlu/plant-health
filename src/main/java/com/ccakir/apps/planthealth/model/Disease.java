@@ -34,8 +34,12 @@ public class Disease {
 
     private String name;
     private String binomialName;
+    @Column( length = 100000 )
     private String characteristics;
+    @Column( length = 100000 )
     private String symptoms;
+    @Column( length = 100000 )
     private String chemicalControl;
+    @Column( length = 100000 )
     private String culturalControl;
 }

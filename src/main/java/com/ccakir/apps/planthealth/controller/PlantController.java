@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.Map;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -31,6 +32,12 @@ public class PlantController {
     }
 
     private final Logger log = LoggerFactory.getLogger(PlantController.class);
+
+    @RequestMapping("/")
+    public String viewPlant(Map<String, Object> model) {
+        model.put("message", "You are in new page !!");
+        return "index";
+    }
 
     @PutMapping("/add")
     public ResponseEntity<PlantDTO> createPlant(@RequestBody PlantDTO plantDTO) {
