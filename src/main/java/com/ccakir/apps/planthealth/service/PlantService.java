@@ -11,6 +11,8 @@ import com.ccakir.apps.planthealth.model.dto.PlantDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -55,6 +57,17 @@ public class PlantService {
      */
     public void deletePlantById(UUID id) {
         plantRepository.deleteById(id);
+    }
+
+    /**
+     * Retrieve all plants
+     * @return list of plant dto.
+     */
+    public List<PlantDTO> getAllPlants() {
+        List<Plant> plants = plantRepository.findAll();
+        List<PlantDTO> plantDTOList = new ArrayList<>();
+        plants.forEach(plant -> plantDTOList.add(PlantDTOMapper.plantToDto(plant)));
+        return plantDTOList;
     }
 
     /**

@@ -1,21 +1,18 @@
 package com.ccakir.apps.planthealth.controller;
 
-import com.ccakir.apps.planthealth.service.PlantService;
 import com.ccakir.apps.planthealth.model.dto.DiseaseDTO;
 import com.ccakir.apps.planthealth.model.dto.PlantDTO;
+import com.ccakir.apps.planthealth.service.PlantService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.UUID;
@@ -36,7 +33,14 @@ public class PlantController {
     @RequestMapping("/")
     public String viewPlant(Map<String, Object> model) {
         model.put("message", "You are in new page !!");
-        return "index";
+        return "index2";
+    }
+    @GetMapping(path = {"/",""})
+    public ModelAndView getPlantPage() {
+        ModelAndView mv = new ModelAndView();
+        List<PlantDTO> plants = plantService.getAllPlants();
+        mv.addObject("plants", plants);
+        return mv;
     }
 
     @PutMapping("/add")

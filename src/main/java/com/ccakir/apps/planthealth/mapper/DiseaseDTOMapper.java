@@ -1,10 +1,8 @@
 package com.ccakir.apps.planthealth.mapper;
 
-import com.ccakir.apps.planthealth.exceptions.CustomException;
 import com.ccakir.apps.planthealth.model.Classification;
 import com.ccakir.apps.planthealth.model.Disease;
 import com.ccakir.apps.planthealth.model.dto.DiseaseDTO;
-import org.springframework.http.HttpStatus;
 
 import java.util.Objects;
 
