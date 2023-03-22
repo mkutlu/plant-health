@@ -22,12 +22,18 @@ public class PlantDTOMapper {
         PlantDTO dto = new PlantDTO();
         dto.setId(plant.getId());
         dto.setName(plant.getName());
-        dto.setBacterialFactors(plant.getBacterialFactors().stream()
-                .map(DiseaseDTOMapper::diseaseToDto).collect(Collectors.toSet()));
-        dto.setFungalFactors(plant.getFungalFactors().stream()
-                .map(DiseaseDTOMapper::diseaseToDto).collect(Collectors.toSet()));
-        dto.setMloFactors(plant.getMloFactors().stream()
-                .map(DiseaseDTOMapper::diseaseToDto).collect(Collectors.toSet()));
+        if(plant.getBacterialFactors() != null) {
+            dto.setBacterialFactors(plant.getBacterialFactors().stream()
+                    .map(DiseaseDTOMapper::diseaseToDto).collect(Collectors.toSet()));
+        }
+        if(dto.getFungalFactors() != null) {
+            dto.setFungalFactors(plant.getFungalFactors().stream()
+                    .map(DiseaseDTOMapper::diseaseToDto).collect(Collectors.toSet()));
+        }
+        if(dto.getMloFactors() != null) {
+            dto.setMloFactors(plant.getMloFactors().stream()
+                    .map(DiseaseDTOMapper::diseaseToDto).collect(Collectors.toSet()));
+        }
         return dto;
     }
     
@@ -41,12 +47,18 @@ public class PlantDTOMapper {
         Plant plant = new Plant();
         plant.setId(dto.getId());
         plant.setName(dto.getName());
-        plant.setBacterialFactors(dto.getBacterialFactors().stream()
-                .map(DiseaseDTOMapper::dtoToDisease).collect(Collectors.toSet()));
-        plant.setFungalFactors(dto.getFungalFactors().stream()
-                .map(DiseaseDTOMapper::dtoToDisease).collect(Collectors.toSet()));
-        plant.setMloFactors(dto.getMloFactors().stream()
-                .map(DiseaseDTOMapper::dtoToDisease).collect(Collectors.toSet()));
+        if(dto.getBacterialFactors() != null) {
+            plant.setBacterialFactors(dto.getBacterialFactors().stream()
+                    .map(DiseaseDTOMapper::dtoToDisease).collect(Collectors.toSet()));
+        }
+        if(dto.getFungalFactors() != null) {
+            plant.setFungalFactors(dto.getFungalFactors().stream()
+                    .map(DiseaseDTOMapper::dtoToDisease).collect(Collectors.toSet()));
+        }
+        if(dto.getMloFactors() != null) {
+            plant.setMloFactors(dto.getMloFactors().stream()
+                    .map(DiseaseDTOMapper::dtoToDisease).collect(Collectors.toSet()));
+        }
         return plant;
     }
 }
